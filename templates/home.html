@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <style>
+            body{
+                background-image: url('bg.jpg');
+                background-color: #97f56c;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            table{
+                width:50%;
+                border-collapse: collapse;
+                
+            }
+            td {
+                padding: 20px;
+                text-align: left;
+               
+            }
+            tr {
+                margin-bottom: 10px;
+            }
+            .button-cell{
+                text-align:center;
+                border-radius: 20px;
+            }
+            input[type="text"],
+            input[type="number"] {
+                width:100%;
+                box-sizing: border-box;
+                padding: 3% ;
+            }
+            .but-sub,.but-clr{
+                padding:10px 20px;
+                border-radius: 10px;
+                background-color: rgb(62, 174, 244);
+                color:white;
+                cursor: pointer;
+            }
+            .but-clr:hover{
+                background-color: red;
+            }
+            .but-sub:hover{
+                background-color:rgb(93, 232, 62);
+            }
+            .predict{
+                text-align: center;
+                font-weight: bold;
+                color: #e30e0e;
+                font-size: 2rem;
+                font-family: 'Helvetica',sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <form align="center" action="/predict" method="post">
+            <table align="center" colspan="2">
+                <tr>
+                    <td>Age:</td>
+                    <td><input type="number" name="Age" min="4" max="90" step="1"></td>
+                    <td>Gender:</td>
+                    <td><input type="radio" name="Gender">Male &nbsp; <br><input type="radio" name="Gender"> Female</td><br>
+                </tr>
+                <br>
+                <tr>
+                    <td>TB:</td>
+                    <td><input type="number" name="TB" min="0.4" max="75.0" step="0.1"></td>
+                    <td>DB:</td>
+                    <td><input type="number" name="DB" min="0.1" max="19.7" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td>Alkphos:</td>
+                    <td><input type="number" name="Alkphos" min="63" max="2110" step="1"></td>
+                    <td>Sgpt:</td>
+                    <td><input type="number" name="Sgpt" min="10" max="2000" step="1"></td>
+                </tr>
+                <tr>
+                    <td>Sgot:</td>
+                    <td><input type="number" name="Sgot" min="10" max="4929" step="1"></td>
+                    <td>TP:</td>
+                    <td><input type="number" name="TP" min="2.7" max="9.6" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td>ALB:</td>
+                    <td><input type="number" name="ALB" min="0.9" max="5.5" step="0.1"></td>
+                    <td>A/G Ratio:</td>
+                    <td><input type="number" name="A/G Ratio" min="0.3" max="2.8" step="0.1"></td>
+                </tr>
+                <tr>
+                    <td class="button-cell" colspan="2"><button class="but-clr">clear</button></td>
+                    <td class="button-cell" colspan="2"><button class="but-sub">Submit</button></td>
+                </tr>
+                <br>
+                <h3><tr class="predict" style="color:#e30e0e;font-size:20px;">{{Prediction_text}}</tr></h3><br>
+            </table>
+        </form>
+    </body>
+</html>
